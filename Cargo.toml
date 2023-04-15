@@ -23,7 +23,9 @@ lazy_static = "1"
 lru = "0.10.0"
 mio = { version = "0.8.0", features = ["os-poll", "net"] }
 mysql_common = { version = "0.30.1", default-features = false, features = [
+# mysql_common = { path = "../rust_mysql_common", default-features = false, features = [
     "derive",
+    "chrono",
 ] }
 once_cell = "1.7.2"
 pem = "2.0.1"
