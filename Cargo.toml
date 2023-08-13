@@ -7,9 +7,9 @@ license = "MIT/Apache-2.0"
 name = "mysql_async_uu"
 readme = "README.md"
 repository = "https://github.com/blackbeam/mysql_async"
-version = "0.32.3"
+version = "0.32.4"
 exclude = ["test/*"]
-edition = "2018"
+edition = "2021"
 categories = ["asynchronous", "database"]
 
 [dependencies]
@@ -110,7 +110,7 @@ derive = ["mysql_common/derive"]
 nightly = []
 
 [lib]
-name = "mysql_async_uu"
+name = "mysql_async"
 path = "src/lib.rs"
 
 [profile.bench]
