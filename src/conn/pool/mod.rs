@@ -7,7 +7,7 @@
 // modified, or distributed except according to those terms.
 
 use futures_util::FutureExt;
-use priority_queue::PriorityQueue;
+use keyed_priority_queue::KeyedPriorityQueue;
 use tokio::sync::mpsc;
 
 use std::{
@@ -92,7 +92,7 @@ impl Exchange {
 
 #[derive(Default, Debug)]
 struct Waitlist {
-    queue: PriorityQueue<QueuedWaker, QueueId>,
+    queue: KeyedPriorityQueue<QueuedWaker, QueueId>,
 }
 
 impl Waitlist {
@@ -523,7 +523,7 @@ mod test {
                 .collect::<Vec<_>>();
 
             // give some time to reset connections
-            sleep(Duration::from_millis(500)).await;
+            sleep(Duration::from_millis(1000)).await;
 
             // get_conn should work if connection is available and alive
             pool.get_conn().await?;
